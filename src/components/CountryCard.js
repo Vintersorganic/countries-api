@@ -48,16 +48,13 @@ const Span = styled.span`
 const CountryCard = ({ country, setCountry }) => {
   const theme = useTheme()
 
-  const handleCountry = () => {
-      setCountry(country)
-  }
 
   if (country.length < 1) {
     return null
   }
 
   return (
-    <Container text={theme.text} elements={theme.elements} to={`${country.alpha3Code}`} onClick={handleCountry}>
+    <Container text={theme.text} elements={theme.elements} to={`/country/${country.alpha3Code}`} >
       <Image src={country.flags.png} />
       <InfoContainer>
         <h3>{country.name}</h3>

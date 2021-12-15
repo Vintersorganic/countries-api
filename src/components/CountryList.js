@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styled, { useTheme } from "styled-components";
 import CountryCard from "./CountryCard";
-import { Outlet } from "react-router-dom";
 import { Search } from "@material-ui/icons";
 import Select from "react-select";
 import { mobile } from './styles/responsive'
@@ -187,7 +186,6 @@ const CountryList = () => {
           ))}
       </CountriesContainer>
 
-      <Outlet />
     </Container>
   );
 };

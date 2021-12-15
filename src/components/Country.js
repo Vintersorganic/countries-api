@@ -1,7 +1,7 @@
 import { ArrowBack } from "@material-ui/icons";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import styled, { useTheme } from "styled-components";
 import { useParams, Link } from "react-router-dom";
 import { mobile } from "./styles/responsive";
@@ -127,7 +127,7 @@ const BorderButton = styled(Link)`
 `;
 
 const Country = () => {
-  const navigate = useNavigate();
+  const history = useHistory();
   const theme = useTheme();
   const [country, setCountry] = useState([]);
   const { name } = useParams();
@@ -144,7 +144,7 @@ const Country = () => {
   }, [name]);
 
   const handleBack = () => {
-    navigate("/");
+    history.push("/");
   };
 
   if (country.length < 1) {
