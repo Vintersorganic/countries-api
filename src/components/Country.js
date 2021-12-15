@@ -134,35 +134,22 @@ const Country = () => {
   const { name } = useParams();
 
   useEffect(() => {
-    const getCountry = async () => {
-      const result = await axios.get(
+    
+     axios.get(
         `https://restcountries.com/v2/alpha/${name}`
-      );
-
+      ).then(result => {
+      console.log(result)
       setCountry(result.data);
-    };
-    getCountry();
+      })
+   
   }, [name]);
-
-  useEffect(() => {
-    const getCountries = async () => {};
-    getCountries();
-  }, []);
 
   const handleBack = () => {
     navigate("/");
   };
 
   if (country.length < 1) {
-    return  (
-      <Loader
-        style={{  marginTop: '100px', margin: 'auto'}}
-        type="Puff"
-        color={`${theme.text}`}
-        height={100}
-        width={100}
-      />
-    ) 
+    return null
   }
 
   return (
