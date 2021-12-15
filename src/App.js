@@ -29,8 +29,7 @@ const App = () => {
         <GlobalContainer>
         
           <Routes>
-            <Route path="/" element={<CountryList setCountry={setCountry} />} />
-            <Route path="/:name" element={<Country country={country} />} />
+            <Route exact path="/" element={<CountryList setCountry={setCountry} />} />
           </Routes>
         </GlobalContainer>
       </>
