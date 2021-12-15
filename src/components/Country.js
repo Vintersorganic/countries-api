@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import styled, { useTheme } from "styled-components";
 import { useParams, Link } from "react-router-dom";
 import { mobile } from "./styles/responsive";
-import Loader from "react-loader-spinner";
 
 const Container = styled.div`
   display: flex;
